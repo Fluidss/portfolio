@@ -647,6 +647,9 @@ nav{
 .Our-Menu h3{
 	font-size: 20px;
 }
+.Our-Menu ul li{
+	text-align: center;
+}
 .Our-Menu ul li img{
 	width: 100%;
 }
