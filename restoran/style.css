@@ -50,14 +50,54 @@ flex-wrap: wrap;
 	display: flex;
 	justify-content: center;
 }
+.mobile-logo{
+	display: none;
+}
 nav ul li {
 	margin:0 25px;
+}
+nav ul li:last-child{
+	display: none;
 }
 nav ul li a {
 	color: #fff;
 	font-size: 16px;
 	font-family: 'AachenBT';
 	text-transform: uppercase;
+}
+.menuButton{
+	display: none;
+	border: none;
+	border-bottom: 2px solid #e58f00;
+	outline: none;
+	background: no-repeat;
+	width: 30px;
+}
+.menuButton:hover::after{
+	transform: rotate(-180deg);
+	transition:1s transform ease;
+}
+.menuButton:hover::before{
+	transform: rotate(180deg);
+	transition:1s transform ease;
+}
+.menuButton::before{
+	content: '';
+	display: block;
+	position: absolute;
+	border-bottom: 2px solid #e58f00;
+	bottom: 10px;
+	left: 0;
+	width: 30px;
+}
+.menuButton::after{
+	content: '';
+	display: block;
+	position: absolute;
+	border-bottom: 2px solid #e58f00;
+	top: 10px;
+	left: 0;
+	width: 30px;
 }
 .head-cont{
 	display: flex;
@@ -328,7 +368,7 @@ position: relative;
 	max-width: 635px;
 	max-height: 636px;
 	position: absolute;
-	top:-66px;
+	top:-60px;
 	left: 0;
 }
 @media (max-width: 1439px) {
@@ -402,6 +442,7 @@ position: relative;
 	}
 	.about-image{
 		margin: 20px;
+		width: 40%;
 	}
 	.about-content h2{
 		font-size: 40px;
@@ -432,13 +473,208 @@ position: relative;
 	.Enjoy-Best-Meal-Cont{
 		min-height:330px;
 	}
+	.Enjoy-Our-Food-Cont{
+		min-height: 450px;
+		width: 80%;
+	}
+	.Enjoy-Our-Food-Cont p{
+		font-size: 20px;
+	}
 	.gallery-food h3{
 		padding: 85px 0 85px 0;
+	}
+	.Enjoy-Best-Meal-Cont{
+		margin-left: 47%;
+		min-height: 230px;
+	}
+	.Enjoy-Best-Meal p{
+		font-size: 20px;
 	}
 
 
 }
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
+	.gallery-food h3{
+		font-size: 40px;
+	}
+	.about-content h2{
+		font-size: 40px;
+	}
+	.gallery-food h3{
+		font-size: 40px;
+	}
+	.Enjoy-Our-Food-Cont h3{
+		font-size: 40px;
+	}
+	.Our-Menu h3{
+		font-size: 40px;
+	}
+	.Our-Menu ul{
+		padding-top: 36px;
+	}
+	.Enjoy-Best-Meal h4{
+		font-size: 40px;
+	}
+	.gallery-food ul li{
+		width: 50%;
+	}
+}
+
+@media (max-width: 768px) {
+	header{
+		max-height: 640px;
+		min-height: inherit;
+	}
+	header .wrap{
+		position: relative;
+	}
+	.logo{
+		display: none;
+	}
+	.mobile-logo{
+		display: block;
+		position: absolute;
+		top: 28px;
+		left: 80px;
+	}
+	nav{
+		position: fixed;
+		display: none;
+		left:38%;
+		top: 30px;
+		border: 1px solid #e58f00;
+		padding:50px;
+		background: rgba(0,0,0,0.9);
+	}
+	nav ul{
+		flex-direction: column;
+	}
+	nav ul li{
+		margin: 10px 0;
+	}
+	nav ul li:last-child{
+		display: flex;
+	}
+	.menuButton{
+		display: block;
+		position: absolute;
+   		right: 80px;
+    	top: 50px;
+	}
+
+}
+@media (max-width: 767px) {
+.mobile-logo{
+	left: 30px;
+}
+.menuButton{
+	right: 44px;
+	top: 86px;
+}
+.hcont-box h1{
+	font-size: 20px;
+	margin-top: 20px;
+}
 
 
+
+.hcont-box{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.hcont-box p{
+	font-size: 12px;
+}
+.head-cont{
+	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+.hcont-box button{
+	font-size: 12px;
+	width: 100px;
+	height: 35px;
+}
+nav{
+	left: 24%;
+}
+.about .wrap{
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	padding: 30px 0 0px 0;
+}
+
+.about-content h2{
+	font-size: 20px;
+	padding: 20px 0;
+}
+.about-content p{
+	font-size: 12px;
+}
+.gallery-food{
+	padding-bottom: 0;
+}
+.gallery-food h3{
+	font-size: 20px;
+}
+.gallery-food ul{
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.gallery-food ul li{
+	width: 100%;
+}
+.Enjoy-Our-Food-Cont h3{
+	font-size: 20px;
+}
+.Enjoy-Our-Food-Cont p{
+	font-size: 12px;
+}
+.Our-Menu{
+	padding: 85px 0 85px 0;
+}
+.Our-Menu h3{
+	font-size: 20px;
+}
+.Our-Menu ul li img{
+	width: 100%;
+}
+.Our-Menu ul li p:nth-child(2){
+	font-size: 20px;
+}
+.Our-Menu ul li p:nth-child(3){
+	font-size: 12px;
+}
+.Our-Menu ul li span:nth-child(4){
+	font-size: 12px;
+}
+.Enjoy-Best-Meal-Cont img{
+	display: none;
+}
+.Enjoy-Best-Meal-Cont{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	margin: 10px;
+	text-align: center;
+
+}
+.Enjoy-Best-Meal h4{
+	font-size: 20px;
+}
+.Enjoy-Best-Meal p{
+	font-size: 12px;
+}
 }
