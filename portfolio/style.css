@@ -497,11 +497,18 @@ footer p{
 	}
 }
 @media (max-width: 480px){
+	.navigation{
+		padding-top: 0;
+	}
+
 	nav ul{
 		flex-direction: column;
 	}
 	nav ul li{
 		margin: 10px 20px;
+	}
+	.head-cont{
+		justify-content: flex-start;
 	}
 	.head-cont h1{
 		font-size: 40px;
@@ -528,7 +535,7 @@ footer p{
 		justify-content: center;
 	}
 	.work ul li{
-		height: 334px;
+		height: 286px;
 		width: 100%;
 	}
 	.lessons h2,.my-work h3,.contacts h4{
