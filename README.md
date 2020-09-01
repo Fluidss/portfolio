@@ -1,1 +1,1 @@
-# minusamix.github.io
+# minusamix
