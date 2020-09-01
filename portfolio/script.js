@@ -16,4 +16,18 @@ window.onload = ()=>{
 			}
 		}
 	}
+
+
+
+	let burger = document.querySelector('.burger');
+	let navigation = document.querySelector('nav');
+	burger.onclick = ()=>{
+		 navigation.style.display = 'flex';
+	}
+	window.addEventListener('click', function (e) {
+    if (!navigation.contains(e.target) && !burger.contains(e.target)) {
+        // Ниже код, который нужно выполнить при срабатывании события.
+        navigation.style.display = 'none';
+    }
+});
 }

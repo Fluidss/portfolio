@@ -43,6 +43,36 @@ header{
 .logo{
 	max-width: 263px;
 }
+.burger{
+	display: none;
+	width: 30px;
+	position: relative;
+	border:none;
+	z-index: 5;
+	outline: none;
+	background: none;
+	border-top: 2px solid #fff;
+	transition: 0.1s all linear;
+
+}
+.burger::before{
+	content: '';
+	display: block;
+	width: 30px;
+	position: absolute;
+	top: -14px;
+	left: 0;
+	border-top: 2px solid #fff;
+}
+.burger::after{
+	content: '';
+	display: block;
+	width: 30px;
+	position: absolute;
+	bottom: -12px;
+	left: 0;
+	border-top: 2px solid #fff;
+}
 nav{
 	align-self: flex-end;
 }
@@ -497,12 +527,27 @@ footer p{
 	}
 }
 @media (max-width: 480px){
-	.navigation{
-		padding-top: 0;
+	.burger{
+		display: block;
 	}
+	.navigation{
+		padding: 50px 0;
 
+	}
+	nav{
+		
+		z-index: 999;
+		text-align: center;
+		background: rgba(0,0,0,0.7);
+		display: none;
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100%;
+	}
 	nav ul{
 		flex-direction: column;
+		justify-content: center;
 	}
 	nav ul li{
 		margin: 10px 20px;
