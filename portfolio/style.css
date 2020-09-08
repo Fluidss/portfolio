@@ -21,7 +21,7 @@ body{
 }
 header{
 	height: 100%;
-	background-image: url(image/header-bg.jpg);
+	background-image: url(image/header-bg.webp);
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: top center;
@@ -502,6 +502,7 @@ footer p{
 	.work ul li{
 		width: 45%;
 		margin: 15px 15px;
+	}
 }
 @media (max-width: 768px){
 	.head-cont h1{
@@ -589,5 +590,4 @@ footer p{
 	.contacts h4{
 		margin-bottom: 40px;
 	}
-
 }
