@@ -458,9 +458,6 @@ nav ul li a:hover::after{
 	text-transform: uppercase;
 	font-weight: 100;
 }
-
-
-
 footer{
 	min-height: 171px;
 	background: #161616;
@@ -470,9 +467,33 @@ footer{
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
+	align-items: center;
 }
 .social-icon li{
 	margin: 0 20px;
+}
+.vk{
+	width: 52px;
+	fill: #fff;
+}
+.insta{
+	width: 33px;
+	height: 33px;
+	fill: #fff;
+}
+.whatsapp{
+	width: 32px;
+	height: 32px;
+	fill: #fff;
+}
+.fb{
+	height: 33px;
+	fill: #fff;
+}
+.git{
+	width: 33px;
+	height: 32px;
+	fill: #fff;
 }
 footer p{
 	font-size: 12px;
