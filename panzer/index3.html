@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Танчики</title>
+</head>
+<body>
+	<div class="wrap">
+		
+	</div>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+		box-sizing:border-box;
+		transition: transform 0.4s ease;
+	}
+	body{
+		position: relative;
+		height: 100vh;
+		width: 100vw;
+		border-image-source: url(border.png);
+		border-image-width: 10px;
+		border-image-slice: 1;
+		border-image-repeat: stretch;
+		border-style: solid;
+		}
+	.panzer{
+		position: absolute;
+		}
+	</style>
+	<script>
+		let panzer = {
+			img:"<img class=\"panzer\" side=\"top\" src=\"https://avatars.mds.yandex.net/get-zen_doc/244664/pub_5bb3bedca94f3f00aee2e133_5bb3bf0fd8c7a300aa76cf1d/scale_1200\">",
+			y:0,
+			x:0,
+			step:5,
+			side:1
+		};
+
+		let playZone = {
+			zone: document.querySelector('body'),
+			hZone:document.querySelector('body').offsetHeight,
+			wZone:document.querySelector('body').offsetWidth
+		};
+		playZone.zone.innerHTML+=panzer.img;
+		let panzerImg = document.querySelector(".panzer");
+
+
+		document.addEventListener("keydown", function(e) {
+			switch(e.keyCode){
+			case 16:
+				playZone.zone.innerHTML += '<img class="bullet" direction="top" src="bullet.png" style="position:absolute; left: '+panzer.x+'px; top: '+panzer.y+'px;">';
+				let bull = document.querySelectorAll(".bullet");
+
+				bull.forEach(function(bull){
+				switch(panzer.side){
+				case 1:
+					document.querySelector(".bullet").setAttribute('direction', 'top');
+				break;
+				case 2:
+				document.querySelector(".bullet").removeAttribute("direction");
+				document.querySelector(".bullet").setAttribute('direction', 'right');
+				break;
+				case 3:
+				document.querySelector(".bullet").removeAttribute("direction");
+				document.querySelector(".bullet").setAttribute('direction', 'bottom');
+				break;
+				case 4:
+				document.querySelector(".bullet").removeAttribute("direction");
+				document.querySelector(".bullet").setAttribute('direction', 'left');
+				break;
+				}
+				});
+				setInterval(function(){
+					bull.forEach(function(bullet){
+
+						let direction = bullet.getAttribute('direction');
+
+						switch (direction){
+
+							case 'top':
+							bullet.style.transform = 'rotate('+0+'deg)';
+							if(bullet.getBoundingClientRect().top < 0){
+
+								bullet.parentNode.removeChild(bullet);
+
+							}	else{
+
+							bullet.style.top = bullet.getBoundingClientRect().top - 4 + 'px';	
+							}	
+							break;	
+							case 'right':
+							bullet.style.transform = 'rotate('+90+'deg)';
+							if(bullet.getBoundingClientRect().right > playZone.wZone){
+
+								bullet.parentNode.removeChild(bullet);
+
+							}	else{
+
+							bullet.style.left = bullet.getBoundingClientRect().right - 4 + 'px';	
+
+							}	
+							break;
+							case 'bottom':
+							bullet.style.transform = 'rotate('+180+'deg)';
+							if(bullet.getBoundingClientRect().top >= playZone.hZone){
+
+								bullet.parentNode.removeChild(bullet);
+
+							}	else{
+
+							bullet.style.top = bullet.getBoundingClientRect().top + 4 + 'px';	
+
+							}	
+							break;	
+							case 'left':
+							bullet.style.transform = 'rotate('+-90+'deg)';
+							if(bullet.getBoundingClientRect().right < 0){
+
+								bullet.parentNode.removeChild(bullet);
+
+							}	else{
+
+							bullet.style.left = bullet.getBoundingClientRect().left - 4 + 'px';	
+
+							}	
+							break;	
+						}
+					},);
+				}, 1000/60);
+		 		panzerImg = document.querySelector('.panzer') ;
+			break;
+			case 38:
+			panzer.side = 1;
+				panzer.y -= panzer.step;
+				panzerImg.style.top = panzer.y+'px'; 
+				
+				panzerImg.style.transform ='rotate(' + 0 + 'deg)';
+				if (panzer.y <= 0){
+					panzer.y =0;
+					}
+
+			break;
+			case 40:
+			panzer.side = 3;
+				panzer.y += panzer.step;
+				panzerImg.style.top = panzer.y+'px';
+				panzerImg.style.transform ='rotate(' + 180 + 'deg)';
+				if (panzer.y >= playZone.hZone-72){
+					panzer.y =playZone.hZone-72;
+					}
+				
+			break;
+			case 39:
+			panzer.side = 2;
+				panzer.x += panzer.step;
+				panzerImg.style.left = panzer.x+'px';
+				panzerImg.style.transform ='rotate(' + 90 + 'deg)';
+			
+				if (panzer.x>=playZone.wZone-80){
+					panzer.x = playZone.wZone-80;
+				}
+			break;
+			case 37:
+			panzer.side = 4;
+				panzer.x -= panzer.step;
+				panzerImg.style.left = panzer.x+'px';
+				panzerImg.style.transform ='rotate(' + -90 + 'deg)';
+				
+				if (panzer.x<=0){
+					panzer.x = 0;
+				}
+			break;
+			}
+		})
+
+	</script>
+</body>
+</html>
+
+
