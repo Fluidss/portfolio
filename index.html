@@ -173,16 +173,5 @@
 			</div>	
 	</footer>
 	<script src="script.js"></script>
-	<?php
-$name = $_POST['name'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
-if (isset($_POST['name']) && isset($_POST['subject']) && isset($_POST['message']))
-if (mail("minusamix@yandex.ru", "Заявка с сайта", $name."\r\n".$subject."\r\n".$message, "From: minusamix@yandex.ru")) {
-echo '<font color=green><b>письмо было принято для передачи</b></font>';
-} else {
-echo '<font color=red><b>что-то пошло не так...</b></font>';
-}
-?>
 </body>
 </html>
